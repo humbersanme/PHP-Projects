@@ -1,0 +1,18 @@
+body {
+    background-image: url('astro.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.rounded-img {
+    border-radius: 15px; /* Puedes ajustar el valor según tus preferencias */
+}
+
+.rounded-container {
+    border-radius: 15px; /* Puedes ajustar el valor según tus preferencias */
+}

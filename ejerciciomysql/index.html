@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL</title>
+    <style>
+        h2 {
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+            font-size: 20px;
+            background-color: rgb(0, 174, 255);
+
+
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <h1>Consultas SQL</h1>
+
+    <div id="cuadrado"></div>
+    <h2> 1/ Haz una consulta que nos devuelva el nombre de los profesores junto con la asignatura que imparten.
+
+        Pistas: puedes usar el elemento JOIN para relacionar las tablas.
+
+        El resultado tiene que mostrar dos columnas, una llamada Nombre_profesor y otra Asignatura_impartida
+
+    </h2>
+
+    SELECT persona.nombre AS Nombre_profesor, asignatura.nombre AS Asignatura_Impartida </p>
+    <p>FROM asignatura </p>
+    <p>JOIN profesor ON asignatura.id_profesor = profesor.id_profesor </p>
+    <p>JOIN persona ON profesor.id_profesor = persona.id;</p>
+    <img src="imagenes/ejercicio1.png" alt="">
+
+
+    <h2>2/ Haz una consulta para saber qué asignatura es impartida por qué
+        profesor
+        El resultado tiene que mostrar dos columnas, una llamada Asignatura_impartida y otra Nombre_profesor</h2>
+
+    <p>SELECT asignatura.nombre AS Asignatura_Impartida, persona.nombre AS Nombre_profesor </p>
+    <p>FROM asignatura </p>
+    <p>JOIN profesor ON asignatura.id_profesor = profesor.id_profesor </p>
+    <p>JOIN persona ON profesor.id_profesor = persona.id;</p>
+    <img src="imagenes/ejercicio2.png" alt="">
+
+
+    <h2>3/ Ahora quiero añadir a la consulta cuántos alumnos matriculados hay en
+        cada asignatura por lo que quiero que me salgan estas dos columnas, y
+        además otra con el número de alumnos matriculados
+
+        El resultado tiene que mostrar tres columnas, una llamada asignatura_impartida, otra Nombre_profesor y otra
+        nueva columna que se llame alumnos_matriculados
+    </h2>
+
+    <p>SELECT asignatura.nombre AS Asignatura_Impartida, persona.nombre AS Nombre_Profesor,
+        COUNT(alumno_se_matricula_asignatura .id_alumno) AS alumnos_matriculados</p>
+    <p>FROM persona, profesor,asignatura, alumno_se_matricula_asignatura</p>
+    <p>WHERE profesor.id_profesor = asignatura.id_profesor AND persona.id = alumno_se_matricula_asignatura.id_alumno AND
+        alumno_se_matricula_asignatura.id_asignatura = asignatura.id</p>
+    <p>GROUP BY asignatura.nombre;</p>
+    <img src="imagenes/ejercicio3.png" alt="">
+
+
+
+    <h2>4/ Haz una consulta que nos devuelva el nombre las asignaturas junto con el número de alumnos matriculados en
+        cada una.
+
+        El resultado tiene que mostrar dos columnas, una llamada nombre_asignatura y otra numero_alumnos
+
+    </h2>
+
+    <p>SELECT asignatura.nombre AS Nombre_Asignatura, COUNT(alumno_se_matricula_asignatura.id_alumno) AS Número_Alumnos
+    </p>
+    <p>FROM persona, asignatura,alumno_se_matricula_asignatura</p>
+    <p>WHERE persona.id = alumno_se_matricula_asignatura.id_alumno AND alumno_se_matricula_asignatura.id_asignatura =
+        asignatura.id</p>
+    <p>GROUP BY asignatura.nombre;</p>
+    <img src="imagenes/ejercicio4.png" alt="">
+
+
+
+
+    <h2>5/ Haz una consulta para saber el nombre de los alumnos matriculados en cada una de las asignaturas
+
+        El resultado tiene que mostrar dos columnas, una llamada nombre_asignatura y otra nombres_alumnos_matriculados
+
+    </h2>
+    <p>SELECT asignatura.nombre AS Nombre_Asignatura, CONCAT(persona.nombre, ' ' , persona.apellido1, ' ' ,
+        persona.apellido2) AS Nombre_Alumnos</p>
+    <p>FROM persona, asignatura, alumno_se_matricula_asignatura</p>
+    <p>WHERE persona.id = alumno_se_matricula_asignatura.id_alumno AND alumno_se_matricula_asignatura.id_asignatura =
+        asignatura.id</p>
+    <p>GROUP BY asignatura.nombre;</p>
+    <img src="imagenes/ejercicio5.png" alt="">
+
+
+
+
+
+    <h2>6/ Haz una consulta para saber cuántos alumnos hay en Trigonometría
+
+        El resultado tiene que mostrar dos columnas, una llamada nombre_asignatura y otra alumnos_matriculados
+    </h2>
+    <p>SELECT asignatura.nombre AS Nombre_Asignatura, COUNT(*) AS Alumnos_Matriculados</p>
+    <p>FROM persona, asignatura, alumno_se_matricula_asignatura</p>
+    <p>WHERE persona.id = alumno_se_matricula_asignatura.id_alumno AND alumno_se_matricula_asignatura.id_asignatura =
+        asignatura.id AND asignatura.nombre = "Trigonometria";</p>
+
+    <img src="imagenes/ejercicio6.png" alt="">
+
+
+    <h2>7/ Haz una consulta que nos devuelva el nombre de los alumnos y la suma de la cantidad de créditos que están
+        cursando.
+
+        El resultado tiene que mostrar dos columnas, una llamada nombre_alumno y otra creditos_cursados
+
+
+    </h2>
+
+    <p>SELECT CONCAT(persona.nombre, ' ' , persona.apellido1, ' ' , persona.apellido2) AS Nombre_Alumno,
+        SUM(asignatura.creditos) AS Creditos_Cursados</p>
+    <p>FROM persona, asignatura, alumno_se_matricula_asignatura</p>
+    <p>WHERE persona.id = alumno_se_matricula_asignatura.id_alumno AND alumno_se_matricula_asignatura.id_asignatura =
+        asignatura.id</p>
+    <p>GROUP BY persona.id;</p>
+    <img src="imagenes/ejercicio7.png" alt="">
+
+
+
+
+
+
+    <h2>8/ Haz una consulta que nos devuelva el nombre de los profesores y el departamento en el que están.
+
+        El resultado tiene que mostrar dos columnas, una llamada nombre_profesor y otra nombre_departamento
+
+
+    </h2>
+    <p>SELECT CONCAT(persona.nombre, ' ' , persona.apellido1, ' ' , persona.apellido2) AS Nombre_Profesor,
+        departamento.nombre AS Nombre_Departamento</p>
+    <p>FROM persona, profesor, departamento</p>
+    <p>WHERE persona.id = profesor.id_profesor AND profesor.id_departamento = departamento.id;</p>
+    <img src="imagenes/ejercicio8.png" alt="">
+
+
+
+
+    <h2>9/ Haz una consulta que nos devuelva en qué año empieza y en qué año acaba cada curso_escolar cada alumno
+        matriculado.
+
+
+        El resultado tiene que mostrar tres columnas, una llamada nombre_alumno, otra con el año de inicio y otra con el
+        año de finalización.
+
+
+    </h2>
+
+
+    <p>SELECT CONCAT(persona.nombre, ' ' , persona.apellido1, ' ' , persona.apellido2) AS Nombre_Alumno,
+        curso_escolar.anyo_inicio AS Año_Inicio, curso_escolar.anyo_fin AS Año_Finalización</p>
+    <p>FROM persona, alumno_se_matricula_asignatura, curso_escolar</p>
+    <p>WHERE persona.id = alumno_se_matricula_asignatura.id_alumno AND alumno_se_matricula_asignatura.id_curso_escolar =
+        curso_escolar.id;</p>
+    <img src="imagenes/ejercicio9.png" alt="">
+
+
+
+
+    <h2>10/ Haz una consulta que me diga el numero de asignaturas en las que se ha matriculado cada alumno
+
+        El resultado tiene que mostrar dos columnas, una llamada nombre_alumno, otra asignaturas_matriculadas.
+
+
+    </h2>
+
+    <p>SELECT CONCAT(persona.nombre, ' ' , persona.apellido1, ' ' , persona.apellido2) AS Nombre_Alumno, COUNT(*) AS
+        Asignaturas_Matriculadas</p>
+    <p>FROM persona, alumno_se_matricula_asignatura, asignatura</p>
+    <p>WHERE persona.id = alumno_se_matricula_asignatura.id_alumno AND alumno_se_matricula_asignatura.id_asignatura =
+        asignatura.id</p>
+    <p>GROUP BY persona.id;</p>
+    <img src="imagenes/ejercicio10.png" alt="">
+
+
+
+
+    <h2>11/ Haz una consulta que me diga el nombre de todas las asignaturas en las que se ha matriculado cada alumno
+
+        El resultado tiene que mostrar dos columnas, una llamada nombre_alumno, otra asignaturas_matriculadas.
+
+
+
+    </h2>
+
+
+    <p>SELECT CONCAT(persona.nombre, ' ' , persona.apellido1, ' ' , persona.apellido2) AS Nombre_Alumno,
+        asignatura.nombre
+        AS Asignaturas_Matriculadas</p>
+    <p>FROM persona, alumno_se_matricula_asignatura , asignatura</p>
+    <p>WHERE persona.id = alumno_se_matricula_asignatura.id_alumno AND alumno_se_matricula_asignatura.id_asignatura =
+        asignatura.id</p>
+    <p>GROUP BY persona.id;</p>
+
+    <img src="imagenes/ejercicio11.png" alt="">
+
+    <h2>12/ Haz una consulta que sume los créditos de todas las asignaturas para obtener el total de créditos de la
+        universidad.
+
+        El resultado tiene que mostrar una columna llamada créditos totales universidad
+
+
+
+
+    </h2>
+
+    <p>SELECT SUM(creditos) AS Creditos_Totales</p>
+    <p>FROM asignatura;</p>
+
+    <img src="imagenes/ejercicio12.png" alt="">
+
+    <h2>13/ Haz una consulta que sume los créditos de todas las asignaturas POR CADA CURSO ESCOLAR REALIZADO para obtener el total de créditos de la universidad.
+
+        El resultado tiene que mostrar una columna llamada curso_escolar y otra llamada créditos-totales
+        
+        
+       
+        
+    </h2>
+
+
+    <p>SELECT CONCAT(curso_escolar.anyo_inicio, ' - ', curso_escolar.anyo_fin ) AS curso_escolar, SUM(asignatura.creditos) AS creditos_totales</p>
+    <p>FROM alumno_se_matricula_asignatura</p>
+    <p>JOIN curso_escolar ON alumno_se_matricula_asignatura.id_curso_escolar = curso_escolar.id
+        JOIN asignatura ON asignatura.id = alumno_se_matricula_asignatura.id_asignatura
+        </p>
+    <p>GROUP BY alumno_se_matricula_asignatura.id_curso_escolar;</p>
+
+    <img src="imagenes/ejerciciosamieka.PNG" alt="">
+
+
+
+    
+    <h2>14/ Realiza una consulta que muestre a cada alumno y los grados (pueden ser más de uno) en los que están matriculados
+
+        El resultado tiene que mostrar una columna llamada nombre_alumno y otra con grados matriculados.      
+        
+       
+        
+    </h2>
+
+
+    <p>SELECT persona.nombre AS nombre_alumno, GROUP_CONCAT(grado.nombre SEPARATOR ', ') AS grados_matriculados</p>
+    <p>FROM alumno_se_matricula_asignatura</p>
+    <p>JOIN persona ON persona.id = alumno_se_matricula_asignatura.id_alumno
+        JOIN asignatura ON asignatura.id = alumno_se_matricula_asignatura.id_asignatura
+        JOIN grado ON grado.id = asignatura.id_grado</p>
+    <p>GROUP BY persona.id;</p>
+
+    <img src="imagenes/ejercicio17.PNG" alt="">
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

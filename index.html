@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="img/1000_F_643901941_Z0XIfYDwNSBo5c11pKVeHORnAxs0ltAj.webp" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+
+body {
+    background-image: url(img/imagen-2.png);
+    background-size: cover; /* Esto ajusta la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat; /* Esto evita que la imagen se repita */
+    background-attachment: fixed; /* Esto fija la imagen de fondo incluso cuando se desplaza */
+}
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+            background-color: aquamarine;
+            padding: 2%;
+            height: 10vh;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            transition: 1s ;
+
+        }
+
+        .menu a {
+            text-decoration: none;
+            padding: 2%;
+            border-bottom: 1px solid white;
+            transition: 1s ;
+
+        }
+
+        .menu a:hover{
+            color: rgb(219,219,219);
+            text-decoration: underline;
+            background-color: blanchedalmond;
+            color: blueviolet;
+
+        }
+
+        .logo{
+            font-weight: bold;
+
+        }
+
+        .burguer{
+            display: none;
+
+        }
+
+        .burguer i{
+            font-size: 75px;
+
+        }
+
+        .fa-items{
+            color:red;
+        }
+
+
+
+        .burguer i{
+         font-size: 35px;
+        }
+
+
+        @keyframes slideDown{
+            from {
+                top:-100%;
+            }
+            to{
+                top:10vh;
+            }
+        }
+
+
+
+        @media screen and (max-width:700px) {
+    
+            .menu {
+                display: none;
+
+            }
+            
+
+            .menu.active{
+                display: flex;
+                background-color: chocolate;
+                flex-direction: column;
+                position:fixed;
+                top:0;
+                left:0;
+                height: 100vh;
+                width: 100%;
+                z-index: 999;
+
+
+            }
+
+            .burguer{
+                display: block;
+                z-index: 999;
+                
+            }
+
+            
+        }
+
+
+.logo{
+    display: flex; 
+    align-items: center;
+}
+
+.logo img{
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+/* Puedes agregar más estilos según sea necesario */
+h1 {
+    color: white; /* Cambia el color del texto dentro de los elementos h1 */
+}
+
+h2 {
+    color: white; /* Cambia el color del texto dentro de los elementos h2 */
+}
+
+ul {
+    list-style: none; /* Esto quita los puntos de lista */
+    padding: 0; /* Esto quita el espacio de relleno por defecto en las listas */
+}
+
+li {
+    margin: 10px 0; /* Esto agrega un poco de espacio entre los elementos de la lista */
+}
+
+a {
+    color: white; /* Cambia el color del texto del enlace */
+    text-decoration: none; /* Quita el subrayado del enlace */
+}
+
+a:hover {
+    text-decoration: underline; /* Agrega subrayado cuando se pasa el ratón por encima del enlace */
+}
+
+
+
+.title h1 {
+    margin-top: 10%;
+    color: white;
+    font-size: 150px;
+    font-weight: 100;
+    font-family: "Glossy";
+
+}
+
+.title h2 {
+    color: white;
+    font-size: 50px;
+    font-weight: 100;
+    font-family: "Glossy";
+}
+
+.titles {
+    font-family: "Osward";
+    width: 100%;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+.html {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+#html1 {
+    background-image: url(img/elefant.jpg);
+    background-size: cover;
+    /* Expande la imagen para cubrir todo el fondo */
+    background-position: center center;
+
+
+}
+
+#html2 {
+    background-image: url(img/mysql.png);
+    background-size: cover;
+    /* Expande la imagen para cubrir todo el fondo */
+    background-position: center center;
+
+
+}
+
+#html3 {
+    background-image: url(img/consulta12.avif);
+    background-size: cover;
+    /* Expande la imagen para cubrir todo el fondo */
+    background-position: center center;
+
+
+}
+
+#html4 {
+    background-image: url(img/acrolis.jpg);
+    background-size: cover;
+    /* Expande la imagen para cubrir todo el fondo */
+    background-position: center center;
+
+
+}
+
+#html5 {
+    background-image: url(img/segundo.jpeg);
+    background-size: cover;
+    /* Expande la imagen para cubrir todo el fondo */
+    background-position: center center;
+
+
+}
+
+#html6 {
+    background-image: url(img/calculosmate.jpg);
+    background-size: cover;
+    /* Expande la imagen para cubrir todo el fondo */
+    background-position: center center;
+
+
+}
+
+#html7 {
+    background-image: url(img/coran.jpg);
+    background-size: cover;
+    /* Expande la imagen para cubrir todo el fondo */
+    background-position: center center;
+
+
+}
+
+#html8 {
+    background-image: url(img/CALCULO2.jpg);
+    background-size: cover;
+    /* Expande la imagen para cubrir todo el fondo */
+    background-position: center center;
+
+
+}
+
+
+
+.examples-envolve p {
+    font-family: "Osward";
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.7);
+    margin-left: 10px;
+    text-align: left;
+    opacity: 0;
+    /* Oculta el texto del enlace */
+    transition: opacity 0.3s;
+    /* Agrega una transiciÃ³n suave */
+}
+
+
+
+.examples {
+    justify-content: center;
+    background-color: #D9D1C7;
+    width: 30vh;
+    height: 25vh;
+    margin: 2%;
+    text-align: center;
+    font-size: 30px;
+    border: 1px solid gray;
+    filter: grayscale(100%);
+
+
+}
+
+.examples-envolve {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    background-color: #D9D1C7;
+    width: 32vh;
+    height: 30vh;
+    border: 1px solid gray;
+    margin: 3vh;
+
+
+}
+.examples:hover,
+.examples-envolve:hover p {
+    opacity: 1;
+    filter: grayscale(0);
+    /* Muestra el texto al hacer hover en el div */
+}
+
+
+.JavaScript {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+#java1 {
+    background-image: url(../img/example1java.webp);
+    background-size: cover;
+    /* Expande la imagen para cubrir todo el fondo */
+    background-position: center center;
+
+}
+
+#java2 {
+    background-image: url(../img/example2java.webp);
+    background-size: cover;
+    /* Expande la imagen para cubrir todo el fondo */
+    background-position: center center;
+
+}
+
+#java3 {
+    background-image: url(../img/example3java.webp);
+    background-size: cover;
+    /* Expande la imagen para cubrir todo el fondo */
+    background-position: center center;
+
+}
+
+
+footer {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #000000;
+    font-weight: bold;
+}
+
+footer p {
+    color: white;
+
+    padding-top: 45px;
+    border-top: 2px solid rgb(239, 0, 0);
+}
+
+.whatsapp {
+
+position: fixed;
+bottom: 20px;
+right: 40px;
+font-size: 3em;
+z-index: 100;
+text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.animacion-whatssap:hover {
+
+animation-name: botonwhat;
+animation-duration: 2s;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+}
+
+@media screen and (max-width:600px) {
+
+    .menus {
+        display: flex;
+        align-items: center;
+        align-content: center;
+    
+    }
+
+    .content {
+        height: 100vh;
+    }
+
+
+    .content a {
+        margin-right: 0;
+        text-align: center;
+        font-weight: 300;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+    
+    }
+ 
+    #down {
+        display:inline-block;
+        margin-top: 93vh;
+    }
+
+    .title h1 {
+        color: white;
+        font-size: 100px;
+    
+    }
+    
+    .title h2 {
+        color: white;
+        font-size: 40px;
+    }
+    
+
+
+}
+
+@media screen and (max-width:450px) {
+
+    .content {
+        height: 80vh;
+    }
+
+
+    .content a {
+        text-align: center;
+        font-weight: 300;
+        font-size: 12px;
+        color: rgb(255, 255, 255);
+    
+    }
+ 
+    #down {
+        display:inline-block;
+        margin-top: 93vh;
+    }
+
+    .title h1 {
+        color: white;
+        font-size: 72px;
+    
+    }
+    
+    .title h2 {
+        color: white;
+        font-size: 32px;
+    }
+    
+
+
+}
+
+ </style>    
+
+ </head>
+
+ 
+ <body>
+    <main>
+
+
+
+    <header>
+
+        <a href="#" class="logo">
+            <img src="img/logo.png" alt="logo cultura">
+            <!--<h2 class="nombre-empresa">Cultura</h2>-->
+        </a>
+        <nav class="menu">
+            <a href="../ejercicioshtml/"><i class="fa-regular fa-wine-glass"></i>Html y Css</a>
+            <a href="../ejerciciosjava/"><i class="fa-solid fa-feather"></i>Javascript</a>
+            <a href="..//examen/Pruebaexamen/index.html"><i class="fa-solid fa-user"></i>Examen</a>
+            <a href="../basededatos/"><i class="fa-solid fa-database"></i></i>Base de datos</a>
+            <a href="../boostrap/"><i class="fa-brands fa-bootstrap"></i>Bootstrap</a>
+            <a href="../ejerciciosphp/"><i class="fa-brands fa-php"></i>PHP</a>
+
+
+        </nav>
+
+        <a class="burguer" onclick="menuDespegable()">
+            <i class="fa-solid fa-bars"></i></a>
+
+
+    </header>
+
+    
+
+
+    <div class="html">
+
+        <h1 class="titles">PHP</h1>
+
+        <div class="examples-envolve" id="envolve-html1">
+            <a href="ejerciciophp1/index.php" target="_self">
+                <img class="examples" id="html1">
+            </a>
+            <p>PHP</p>
+        </div>
+
+        <div class="examples-envolve" id="envolve-html2">
+
+            <a href="ejerciciomysql/index.html" target="_blank">
+
+                <img class="examples" id="html2">
+
+            </a>
+
+            <p>Consulta</p>
+
+        </div>
+
+
+        <div class="examples-envolve" id="envolve-html3">
+
+            <a href="ejercicios-18/ejercicio1.1.php" target="_blank">
+
+                <img class="examples" id="html3">
+
+            </a>
+
+            <p>Consulta</p>
+
+        </div>
+
+        <div class="examples-envolve" id="envolve-html3">
+
+            <a href="multiima/arrayMulti.php" target="_blank">
+
+                <img class="examples" id="html4">
+
+            </a>
+
+            <p>Consejos</p>
+
+        </div>
+        <div class="examples-envolve" id="envolve-html3">
+
+            <a href="calculadora-comida/index.php" target="_blank">
+
+                <img class="examples" id="html5">
+
+            </a>
+
+            <p>Menú</p>
+
+        </div>
+
+        <div class="examples-envolve" id="envolve-html3">
+
+            <a href="calculo/calculo.php" target="_blank">
+
+                <img class="examples" id="html6">
+
+            </a>
+
+            <p>Cálculo</p>
+
+        </div>
+
+        <div class="examples-envolve" id="envolve-html3">
+
+            <a href="citas/citas.php" target="_blank">
+
+                <img class="examples" id="html7">
+
+            </a>
+
+            <p>Tarot</p>
+
+        </div>
+
+        
+        <div class="examples-envolve" id="envolve-html3">
+
+            <a href="calculos/index.php" target="_blank">
+
+                <img class="examples" id="html8">
+
+            </a>
+
+            <p>Cáculo 2</p>
+
+        </div>
+
+
+        
+
+
+
+        
+        
+
+
+
+<footer>
+    <p>Diseño web 2023</p>
+</footer>
+
+ <!-- 
+    codigo de whatsaap -->
+    <a class="whatsapp" href="https://wa.me/+34686836233?text=Me%20gustaría%20saber%20el%20precio%20del%20coche"
+        target="_blank">
+        <i class="fa-brands fa-whatsapp fa-beat animacion-whatssap" style="color: #25D366;"></i>
+    </a>
+
+
+</body>
+
+</main>
+
+<script>
+    let menu = document.querySelector(".menu");
+    let botonBurguer = document.querySelector(".burguer i");
+
+
+    function menuDespegable(){
+
+        menu.classList.toggle("active");
+        botonBurguer.classList.toggle("fa-times");
+
+
+    }
+   </script>   
+
+</html>
+
+
+
+
+

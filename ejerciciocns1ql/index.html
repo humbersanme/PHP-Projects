@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL</title>
+    <style>
+        h2 {
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+            font-size: 20px;
+            background-color: rgb(0, 174, 255);
+
+
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <h1>Consultas SQL</h1>
+
+    <div id="cuadrado"></div>
+    <h2> 1. Haz una consulta de, ¿cuántos empleados nacieron entre el año 1900-1950?     
+
+    </h2>
+
+   
+       <p>SELECT COUNT(*) AS cantidad_empleados, GROUP_CONCAT(employees.FirstName, ' ', employees.LastName) AS nombre_empleado</p>
+
+ 
+    <p>FROM employees </p>
+    <p>WHERE BirthDate BETWEEN '1900-01-01' AND '1950-12-31'; </p>
+    <img src="imagenes/konsultasy1.PNG" alt="">
+
+    
+
+
+
+
+    <h2>2/ Haz una consulta que nos devuelva el nombre del producto junto con la categoryID.</h2>
+
+    <p> SELECT products.ProductName AS nombre_producto,
+        products.CategoryID AS categoria_producto,
+        categories.CategoryName AS nombre_categoria</p>
+    <p>FROM products</p>  
+    <p>JOIN categories ON categories.CategoryID = products.CategoryID;</p> 
+    <img src="imagenes/konsultasya2.PNG" alt="">
+
+
+    
+
+
+   
+
+    
+
+
+
+
+
+
+
+
+</body>
+
+</html>
