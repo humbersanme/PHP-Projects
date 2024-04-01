@@ -49,8 +49,8 @@ If you want to contribute to this project, follow these steps:
 
 ## License
 
-This project is under the [License Name] license. See the LICENSE.md file for more details.
+This project is under the  license. See the LICENSE.md file for more details.
 
 ## Contact
 
-For any questions or suggestions about this project, you can contact the author via [email](mailto:youremail@example.com) or visit their GitHub profile: [username](https://github.com/username).
+For any questions or suggestions about this project, you can contact the author via [email](mailto:youremail@example.com) or visit their GitHub profile: humbersanme(https://github.com/humbersanme).
